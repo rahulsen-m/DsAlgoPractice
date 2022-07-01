@@ -21,7 +21,8 @@ public static class SubArrayWithGivenSum
                     end = i;
                     break;
                 }
-                hash.Add(currentSum, i);
+                // add only if the given key is not present
+                if(!hash.ContainsKey(sumToChekInTheKey))hash.Add(currentSum, i);
             }
             if(end == -1)
                 return null;
